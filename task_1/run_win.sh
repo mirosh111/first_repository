@@ -1,3 +1,3 @@
 conda env create -f environment.yml
-activate test_env
+activate env_win
 jupyter-nbconvert plot_iris_dataset.ipynb
