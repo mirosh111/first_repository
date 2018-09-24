@@ -10,4 +10,3 @@ dependencies:
   - vs2015_runtime=14.0.25123=3
   - wheel=0.31.1=py37_0
   - wincertstore=0.2=py37_0
-prefix: C:\Users\Dmitry\Anaconda3\envs\myenv
