@@ -7,4 +7,6 @@ jobs:
       - checkout
       - run: echo "A first hello"
       - run: virtualenv -p python3 env_name
+      - run: source activate env_name
+      - run: deactivate
      
