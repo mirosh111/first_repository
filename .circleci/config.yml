@@ -6,5 +6,6 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+      - run: pip install virtualenv
       - run: virtualenv -p python3 env_task
      
