@@ -6,3 +6,4 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+      - run: plot_iris_dataset.html
