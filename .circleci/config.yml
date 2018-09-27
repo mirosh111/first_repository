@@ -6,6 +6,6 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
-      - run: jupyter-nbconvert --execute task_1/*.ipynb
+      - run: pip install jupyter
     
      
