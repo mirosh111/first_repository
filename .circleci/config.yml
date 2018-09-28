@@ -19,7 +19,7 @@ jobs: # a collection of steps
           command: |
             . venv/bin/activate
             jupyter-nbconvert task_1/*.ipynb
-            mv /*.html task_2
+            mv plot_iris_dataset.html task_2
       - store_artifacts: # special step to store test reports as artifacts
           path: task_2
           destination: task_2
