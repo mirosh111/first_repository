@@ -20,7 +20,6 @@ jobs: # a collection of steps
           name: run tests
           command: |
             . venv/bin/activate
-            cd task_1
             jupyter-nbconvert --execute plot_iris_dataset.ipynb
             mkdir -p task_2
             mv plot_iris_dataset.html task_2
