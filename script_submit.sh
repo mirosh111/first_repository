@@ -1,0 +1,1 @@
+kaggle competitions submit titanic -f titanic.csv -m "Hello"
