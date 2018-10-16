@@ -25,7 +25,6 @@ jobs: # a collection of steps
             kaggle competitions download titanic
             jupyter-nbconvert —execute Titanic_mirosh.ipynb
             kaggle competitions submit titanic -f titanic.csv -m "My submission messsage"
-    
           paths:
             - "venv"
       - run: # run tests
