@@ -13,8 +13,17 @@ jobs: # a collection of steps
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+       
             
-          
+      - run:
+          name: kaggle
+          command: |
+            . venv/bin/activate
+            mkdir .kaggle
+            mv kaggle.json .kaggle
+            kaggle competitions download titanic
+            jupyter —execute Titanic_mirosh.ipynb
+            kaggle competitions submit titanic -f titanic.csv -m "My submission messsage"
     
           paths:
             - "venv"
