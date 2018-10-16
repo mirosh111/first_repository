@@ -23,7 +23,7 @@ jobs: # a collection of steps
             mkdir .kaggle
             mv kaggle.json .kaggle
             kaggle competitions download titanic
-            jupyter —execute Titanic_mirosh.ipynb
+            jupyter-nbconvert --execute titanic-mirosh.ipynb
             kaggle competitions submit titanic -f titanic.csv -m "My submission messsage"
           paths:
             - "venv"
