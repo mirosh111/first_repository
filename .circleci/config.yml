@@ -18,7 +18,7 @@ jobs: # a collection of steps
           name: kaggle
           command: |
             . venv/bin/activate
-            export KAGGLE_USERNAME=datadinosaur
+            export KAGGLE_USERNAME=mirosh111
             export KAGGLE_KEY=c0a1546c96be24654a0ea24f6a3e4613
             mkdir .kaggle
             mv kaggle.json .kaggle
