@@ -20,6 +20,7 @@ jobs: # a collection of steps
             . venv/bin/activate
             export KAGGLE_USERNAME
             export KAGGLE_KEY
+            echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             mkdir .kaggle
             mv kaggle.json .kaggle
             kaggle competitions download titanic
