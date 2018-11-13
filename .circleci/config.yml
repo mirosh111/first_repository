@@ -13,9 +13,10 @@ jobs: # a collection of steps
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            pip install osfclient
        
       - run:
-          name: kaggle
+          name: kaggle & OSF
           command: |
             . venv/bin/activate
             export KAGGLE_USERNAME
@@ -25,18 +26,17 @@ jobs: # a collection of steps
             mv kaggle.json .kaggle
             kaggle competitions download titanic
             jupyter-nbconvert --execute titanic-mirosh.ipynb
-            kaggle competitions submit titanic -f titanic.csv -m "My submission messsage"
+            mkdir -p task
+            mv titanic-mirosh.html task
+            mv titanic.csv task
+            kaggle competitions submit titanic -f task/titanic.csv -m "My submission messsage"
+         #   osf -p <project> upload task/titanic.csv osfstorage/Miroshnichenko
+            
           paths:
             - "venv"
-      - run: # run tests
-          name: run tests
-          command: |
-            . venv/bin/activate
-            jupyter-nbconvert --execute plot_iris_dataset.ipynb
-            mkdir -p task_2
-            mv plot_iris_dataset.html task_2
+      
       - store_artifacts: # special step to store test reports as artifacts
-          path: task_2
-          destination: task_2
+          path: task
+          destination: task
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples    
      
