@@ -13,13 +13,15 @@ jobs: # a collection of steps
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            pip install osfclient
+            
        
       
       - run:
           name: kaggle & OSF
           command: |
             . venv/bin/activate
+            export KAGGLE_KEY
+            export KAGGLE_USERNAME
             echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             mkdir .kaggle
             mv kaggle.json .kaggle
@@ -30,7 +32,7 @@ jobs: # a collection of steps
             mv titanic.csv task
             kaggle competitions submit titanic -f task/titanic.csv -m "My submission messsage"
             export OSF_PASSWORD
-            osf -p x783r upload task/titanic-mirosh.html osfstorage/Miroshnichenko/titanic.html
+          #  osf -p x783r upload task/titanic-mirosh.html osfstorage/Miroshnichenko/titanic.html
             
             
           paths:
