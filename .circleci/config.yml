@@ -19,9 +19,6 @@ jobs: # a collection of steps
           name: kaggle & OSF
           command: |
             . venv/bin/activate
-            export KAGGLE_USERNAME
-            export KAGGLE_KEY
-            export OSF_PASSWORD
             echo "{"username":\"${KAGGLE_USERNAME}\","key":\"${KAGGLE_KEY}\}" > kaggle.json
             mkdir .kaggle
             mv kaggle.json .kaggle
@@ -32,7 +29,7 @@ jobs: # a collection of steps
             mv titanic.csv task
             kaggle competitions submit titanic -f task/titanic.csv -m "My submission messsage"
             osf -p 5k26m upload task/titanic.csv osfstorage/dmitriy_miroshnichenko
-            read $OSF_PASSWORD
+            
             
           paths:
             - "venv"
