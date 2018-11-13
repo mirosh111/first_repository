@@ -30,7 +30,7 @@ jobs: # a collection of steps
             mv titanic.csv task
             kaggle competitions submit titanic -f task/titanic.csv -m "My submission messsage"
             export OSF_PASSWORD
-            osf -p x783r upload task/titanic.csv osfstorage/dmitriy_miroshnichenko.csv
+            osf -p x783r upload task/titanic.csv osfstorage/Miroshnichenko/titanic.csv
             
             
           paths:
