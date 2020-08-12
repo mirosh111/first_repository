@@ -1,4 +1,4 @@
-# first_repository
+# Test repository
 MIPT ML course tasks
 
 [![CircleCI](https://circleci.com/gh/mirosh111/first_repository/tree/master.svg?style=svg)](https://circleci.com/gh/mirosh111/first_repository/tree/master)
